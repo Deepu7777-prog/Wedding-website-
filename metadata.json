@@ -1,0 +1,6 @@
+{
+  "name": "Ananya & Vikram — Royal Indian Wedding",
+  "description": "A cinematic, hand-illustrated royal Indian wedding invitation and celebration guide for Ananya Sharma and Vikramaditya Rao in Udaipur.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

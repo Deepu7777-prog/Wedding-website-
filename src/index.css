@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-script: "Alex Brush", cursive;
+
+  --color-maroon: #4A0E17;
+  --color-maroon-deep: #32080E;
+  --color-maroon-rich: #6B1220;
+  --color-gold: #C59B40;
+  --color-gold-light: #E2C578;
+  --color-gold-dark: #8F6B24;
+  --color-ivory: #FAF5EB;
+  --color-ivory-warm: #F3EAD8;
+  --color-rose-blush: #E8B4BC;
+  --color-rose-deep: #B55464;
+  --color-saffron: #D9822B;
+  --color-ink: #241416;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    background-color: #FAF5EB;
+    color: #241416;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    text-wrap: balance;
+  }
+
+  :focus-visible {
+    outline: 2px solid #C59B40;
+    outline-offset: 3px;
+  }
+}
+
+/* Subtle artisanal paper texture via CSS radial noise */
+.paper-grain {
+  background-image:
+    radial-gradient(rgba(143, 107, 36, 0.045) 1px, transparent 0),
+    radial-gradient(rgba(107, 18, 32, 0.03) 1px, transparent 0);
+  background-size: 28px 28px;
+  background-position: 0 0, 14px 14px;
+}
+
+/* Subtle gold foil shimmer on accent lines and headings */
+@keyframes goldShimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.gold-shimmer-text {
+  background: linear-gradient(
+    110deg,
+    #8F6B24 0%,
+    #C59B40 30%,
+    #F3DC9B 50%,
+    #C59B40 70%,
+    #8F6B24 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: goldShimmer 7s linear infinite;
+}
+
+.gold-shimmer-light {
+  background: linear-gradient(
+    110deg,
+    #C59B40 0%,
+    #F6E4AD 35%,
+    #FFF7DB 50%,
+    #E2C578 65%,
+    #C59B40 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: goldShimmer 7s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gold-shimmer-text,
+  .gold-shimmer-light {
+    animation: none;
+  }
+}
